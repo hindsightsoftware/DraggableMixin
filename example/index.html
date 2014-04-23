@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Example :)</title>
+  <script src="../dist/bower_components/requirejs/require.js"></script>
+  <style>
+    #map-container {
+      width: 100%;
+      font-family: arial;
+    }
+
+    #map-container li:not(.status) {
+      float: left;
+      display: inline-block;
+      max-width: 195px !important;
+      min-width: 195px;
+      border: 1px solid #ddd;
+    }
+
+    #map-container ul {
+      width: auto;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      min-height: 400px;
+      height: 100%;
+    }
+
+    #map-container h3 {
+      padding: 5px;
+      margin-bottom: 3px;
+      /*border-bottom: 1px solid #ccc;*/
+    }
+
+    .status {
+      display: block;
+      width: 172px;
+      height: 58px;
+      background-color: #f0f0f0;
+      margin: 10px;
+      border-radius: 3px;
+      /*border: 1px dashed #bbb;*/
+      border: 1px solid #bbb;
+    }
+
+    #map-container .status span {
+      font-size: 12px;
+    }
+
+    .status:hover {
+      cursor: pointer;
+      /*border: 1px solid #bbb;*/
+    }
+
+    .status.expand {
+      border: 1px solid #000;
+    }
+
+    #map-container {
+      width: 900px;
+    }
+
+    #map-container ul {
+      height: 100%;
+    }
+
+    #map-container ul li:not(.status) {
+      display: inline;
+    }
+
+    .list ul {
+      border-top: 4px solid #387e36;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  require(['../dist/bower_components/react/react', '../dist/DraggableMixin'], function (React, DraggableList) {
+    React.renderComponent(DraggableList({
+      onDrop: function (event) {
+        // to override: return true;
+      },
+      onDrag: function (event) {
+        console.log('DRAGGED');
+      },
+      onGrab: function (event) {
+        console.log('GRABBED');
+      },
+      onSave: function (data) {
+        console.log('SAVED, here is your data', data);
+      },
+      columns: [
+        {
+          className: 'list',
+          content: 'Open',
+          items: [
+            {
+              className: 'status',
+              content: 'ISSU-146 - BUTTON NOT WORKING'
+            }
+          ]
+        },
+        {
+          className: 'list',
+          content: 'Work in progress',
+          items: [
+            {
+              className: 'status',
+              content: 'ISSU-143 - FIX HEARTBLEED'
+            }
+          ]
+        },
+        {
+          className: 'list',
+          content: 'Completed',
+          items: [
+            {
+              className: 'status',
+              content: 'ISSU-148 - ADD PASSWORD RESEND OPTION'
+            }
+          ]
+        }
+      ]
+    }), document.body);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "DraggableMixin",
+  "version": "0.0.1",
+  "description": "React js draggable mixin, sort of replacement for jquery ui sortable",
+  "scripts": {
+    "start": "npm install && bower install && grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hindsightsoftware/DraggableMixin.git"
+  },
+  "keywords": [
+    "react",
+    "js",
+    "mixin",
+    "drag",
+    "drop"
+  ],
+  "devDependencies": {
+    "grunt-react": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "author": "hindsightsoftware",
+  "license": "MIT"
+}

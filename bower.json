@@ -1,0 +1,35 @@
+{
+  "name": "DraggableMixin",
+  "version": "0.0.1",
+  "authors": [
+    "charliedowler <charlie.dowler@hindsightsoftware.com>"
+  ],
+  "description": "React js draggable mixin, sort of replacement for jquery ui sortable",
+  "main": "dist/DraggableMixin.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "react",
+    "js",
+    "mixin",
+    "drag",
+    "drop"
+  ],
+  "dependencies": {
+    "react": "0.10.0"
+  },
+  "devDependencies": {
+    "requirejs": "2.1.11"
+  },
+  "license": "MIT",
+  "homepage": "homepage",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "example"
+  ]
+}
