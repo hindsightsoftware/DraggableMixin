@@ -2,7 +2,14 @@
 ---
 In Behave Pro we have a feature for mapping custom statuses to system defaults, we've recently moved alot of our stuff to React. So heres my attempt of re-creating the jQuery UI sortable plugin in React.js.
 
-Here is a [JSFiddle demo](http://google.com).
+Based on this [stackoverflow thread](http://stackoverflow.com/questions/20926551/recommended-way-of-making-react-component-div-draggable)
+
+Here is a [JSFiddle demo](http://jsfiddle.net/charliedowler/kAX8V/11/).
+
+##Installation
+```shell
+$ bower install --save DraggableMixin
+```
 
 Here is a rough example of using this mixin. 
 
@@ -49,3 +56,16 @@ React.renderComponent(<Draggable onDrop={function(event) {
   }
 ]} />, document.getElementById('targetElement'));
 ```
+
+##Contribute?
+
+Want to contribute towards this project?
+
+```shell
+$ git clone git@github.com:hindsightsoftware/DraggableMixin.git
+$ cd DraggableMixin
+$ npm start
+$ grunt dev
+```
+
+Open up examples/index.html to experiment.
