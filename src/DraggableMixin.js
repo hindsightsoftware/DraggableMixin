@@ -169,12 +169,12 @@ var DraggableMixin = function (React) {
 };
 
 if (typeof module !== 'undefined' && 'exports' in module) {
-  var React = require('./bower_components/react/react');
+  var React = require('react');
   module.exports = DraggableMixin(React);
 }
 else if (typeof define !== 'undefined') {
   define(function (require, exports, module) {
-    var React = require('./bower_components/react/react');
+    var React = require('react');
     module.exports = DraggableMixin(React);
   }, []);
 }
