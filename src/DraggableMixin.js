@@ -168,16 +168,19 @@ var DraggableMixin = function (React) {
   return DraggableList;
 };
 
-if (typeof module !== 'undefined' && 'exports' in module) {
-  var React = require('react');
-  module.exports = DraggableMixin(React);
-}
-else if (typeof define !== 'undefined') {
-  define(function (require, exports, module) {
-    var React = require('react');
-    module.exports = DraggableMixin(React);
-  }, []);
-}
-else if (typeof window !== 'undefined') {
-  window.Draggable = DraggableMixin();
-}
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(['react'], factory);
+  } else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory(require('react'));
+  } else {
+    // Browser globals (root is window)
+    root.Draggable = factory(root.React);
+  }
+}(this, function (React) {
+  return DraggableMixin(React);
+}));
